@@ -3,15 +3,23 @@ import java.util.ArrayList;
 public class Player {
 
     private ArrayList<Card> dealtCard;
-    private RankType rank;
+    private String name;
 
-    public Player() {
+    public Player(String name) {
         this.dealtCard = new ArrayList<Card>();
-        this.rank = rank;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int returnValue() {
-        return this.rank.getValue();
+        return dealtCard.get(0).getRank().getValue();
     }
 
 
@@ -19,8 +27,13 @@ public class Player {
         return dealtCard.size();
     }
 
+
     public void receiveCard(Deck deck) {
         Card card = deck.dealCard();
         this.dealtCard.add(card);
+    }
+
+    public int handTotal() {
+        this.dealtCard
     }
 }

@@ -12,7 +12,7 @@ public class PlayerTest {
     @Before
     public void before() {
         deck = new Deck();
-        player = new Player();
+        player = new Player("Ben");
     }
 
 
@@ -22,6 +22,23 @@ public class PlayerTest {
         deck.shuffleDeck();
         player.receiveCard(deck);
         assertEquals(1, player.amountOfCards());
+    }
+
+
+    @Test
+    public void returnValue() {
+        deck.populateDeck();
+        player.receiveCard(deck);
+        assertEquals(1, player.returnValue());
+    }
+
+    @Test
+    public void getHandToal() {
+        deck.populateDeck();
+        player.receiveCard(deck);
+        player.handTotal();
+        assertEquals(1, player.returnValue());
+
     }
 
 }

@@ -15,8 +15,8 @@ public class DealerTest {
         dealer = new Dealer();
         deck = new Deck();
         deck.populateDeck();
-        player1 = new Player();
-        player2 = new Player();
+        player1 = new Player("Ben");
+        player2 = new Player("Jo");
     }
 
     @Test
